@@ -21,7 +21,7 @@ The data frames for the individual training and test data are put together using
 
 The inertial test data is not required and is ignored.
 
-There are over 560 columns to the full data frame. Here we are only interested in the mean on the signals collected and the standard deviations. The grep command selects out the number of the columns which have a column name that contain the exact "mean()" or "std()" strings. Everything but these columns is then filtered out.
+There are over 560 columns in the full data frame. Here we are only interested in the mean measurements and the standard deviation measurements. The grep command selects out the number of the columns which have a column name that contain the exact "mean()" or "std()" strings. Everything but these columns is then filtered out.
 
 The activities are currently labelled 1-6. The numbers are switched to their corresponding label from the "activity_labels.txt" file using plyr's mapvalues function.
 
