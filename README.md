@@ -1,20 +1,3 @@
-A First Level Header
-====================
+### README for Getting and Cleaning Data Course Project
 
-A Second Level Header
----------------------
-
-Now is the time for all good men to come to
-the aid of their country. This is just a
-regular paragraph.
-
-The quick brown fox jumped over the lazy
-dog's back.
-
-### Header 3
-
-> This is a blockquote.
-> 
-> This is the second paragraph in the blockquote.
->
-> ## This is an H2 in a blockquote
+The objective of this project was to summarise the data from the Human Activity Recognition Using Smartphones Data Set. The data set can be found at this URL: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones
