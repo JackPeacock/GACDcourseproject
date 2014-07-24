@@ -1,4 +1,4 @@
-setwd("/Users/JackPeacock/datasciencecoursera/Getting\ and\ Cleaning\ Data/Course\ Project")
+getwd()
 library(plyr)
 ## Get test data
 
@@ -24,7 +24,7 @@ fullDf <- rbind(testDf, trainDf)
 
 ## Find the column names which end with "mean()" or "std()"
 
-meanCols <- grep("-mean()", colnames(fullDf), fixed = TRUE)
+meanCols <- grep("-mea", colnames(fullDf), fixed = TRUE)
 sdCols <- grep("std()", colnames(fullDf), fixed = TRUE)
 
 ## These are the columns needed along with the first 2 which label subject and
@@ -42,11 +42,16 @@ activityLabels = read.table("./UCI HAR Dataset/activity_labels.txt", stringsAsFa
 
 fullDf[,2] <- mapvalues(fullDf[,2], from = activityLabels[,1], to = activityLabels[,2])
 
-## Step 5: The columns have already been appropriately labelled
+## Step 5: Column names are cleaned up slightly to remove punctuation.
 ## Column name descriptions will be available in the code book.
 
 finalDf = data.frame(matrix(ncol = ncol(fullDf)-2, nrow = 30 + nrow(activityLabels)))
 colnames(finalDf) <- c(colnames(fullDf)[c(3:ncol(fullDf))])
+
+colnames(finalDf) <- sub("()","", colnames(finalDf), fixed=TRUE)
+colnames(finalDf) <- gsub("-","", colnames(finalDf), fixed=TRUE)
+colnames(finalDf) <- sub("mean","Mean", colnames(finalDf), fixed=TRUE)
+colnames(finalDf) <- sub("std","Std", colnames(finalDf), fixed=TRUE)
 
 rowNames = vector()
 
@@ -67,4 +72,3 @@ for (i in c(1:30)) {
 }
 
 write.table(finalDf, "finaltable.txt")
-read.table(finalDf, "finaltable.txt")

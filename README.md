@@ -21,13 +21,13 @@ The data frames for the individual training and test data are put together using
 
 The inertial test data is not required and is ignored.
 
-There are over 560 columns to the full data frame. Here we are only interested in the mean on the signals collected and the standard deviations. The grep command selects out the number of the columns which have a column name that contain the exact "mean()" and "std()" strings. Everything but these columns is then filtered out.
+There are over 560 columns to the full data frame. Here we are only interested in the mean on the signals collected and the standard deviations. The grep command selects out the number of the columns which have a column name that contain the exact "mean()" or "std()" strings. Everything but these columns is then filtered out.
 
 The activities are currently labelled 1-6. The numbers are switched to their corresponding label from the "activity_labels.txt" file using plyr's mapvalues function.
 
-All that is left to do is subset the data for each activity or activity and then calculate the mean of the columns. finalDf is final data frame which will be exported. It is intialised with the number of columns according to the previous data frame (but without "Subject" and "Activity" headings) and has a number of rows equal to the number of participants (30) plus the number of activities.
+All that is left to do is subset the data for each subject or activity and then calculate the mean of the columns. finalDf is final data frame which will be exported. It is intialised with the number of columns according to the previous data frame (but without "Subject" and "Activity" headings) and has a number of rows equal to the number of participants (30) plus the number of activities.
 
-The row names state the subset of data which the column means have been calculated. Numbers indicate the number of the participant. "For" oops then cycle over the full data frame, subsetting it accordingly, then calculating the mean of the columns.
+The row names state the subset of data which the column means have been calculated. Numbers indicate the number of the participant. Column names are also cleaned up slightly to remove unneccesary symbols and properly capitalise. "For" loops then cycle over the full data frame, subsetting it accordingly, then calculating the mean of the columns.
 
-Finally, the data.frame is written to a file using write.table(). It can be read back into R using the read.table function.
+Finally, the data.frame is written to a file using write.table(). It can be read back into R using the read.table() function.
 
