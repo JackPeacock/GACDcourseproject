@@ -67,3 +67,4 @@ for (i in c(1:30)) {
 }
 
 write.table(finalDf, "finaltable.txt")
+read.table(finalDf, "finaltable.txt")
