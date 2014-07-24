@@ -24,7 +24,7 @@ fullDf <- rbind(testDf, trainDf)
 
 ## Find the column names which end with "mean()" or "std()"
 
-meanCols <- grep("-mea", colnames(fullDf), fixed = TRUE)
+meanCols <- grep("-mean()", colnames(fullDf), fixed = TRUE)
 sdCols <- grep("std()", colnames(fullDf), fixed = TRUE)
 
 ## These are the columns needed along with the first 2 which label subject and
