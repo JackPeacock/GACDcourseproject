@@ -1,5 +1,9 @@
-README for Getting and Cleaning Data Course Project
----------------------------------------------------
+# Getting and Cleaning Data
+## Course Project
+
+This project was part of the assessment for the [Getting and Cleaning Data Course](https://www.coursera.org/course/getdata), part of [Coursera's Data Science Specialization](https://www.coursera.org/specialization/jhudatascience/1). The details of the project are outlined below.
+
+---
 
 The objective of this project was to summarise the data from the Human Activity Recognition Using Smartphones Data Set. The data set can be found at this URL: http://archive.ics.uci.edu/ml/datasets/Human+Activity+Recognition+Using+Smartphones. For each activity the subjects performed, and for each subject, the average for the mean and standard deviation measurements has been calculated and stored in a table.
 
